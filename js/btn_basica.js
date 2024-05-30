@@ -1,31 +1,20 @@
-
-document.getElementById('tipoUnidad').addEventListener('change', function() {
-    let selectedValue = this.value;
-    let basicaButtons = document.getElementById('basicaButtons');
-    let grupoSelector = document.getElementById('grupoSelector');
-    let num2Input = document.getElementById('num2');
-
-    if (selectedValue === 'bas') {
-        basicaButtons.style.display = 'block';
-        grupoSelector.style.display = 'none';
-        num2Input.placeholder = "Ingresa otro número";
-    } else {
-        basicaButtons.style.display = 'none';
-        grupoSelector.style.display = 'block';
-        num2Input.placeholder = "Resultado";
-    }
-});
 document.getElementById('tipoUnidad').addEventListener('change', function() {
   let selectedValue = this.value;
+  let basicaButtons = document.getElementById('basicaButtons');
+  let grupoSelector = document.getElementById('grupoSelector');
+  let num2Input = document.getElementById('num2');
 
-  let vacioOption = document.querySelector('vacio');
-
-  if (selectedValue === 'vacio') {
+  if (selectedValue === 'bas') {
+      basicaButtons.style.display = 'block';
       grupoSelector.style.display = 'none';
-      vacioOption.style.display = 'none'; 
+      num2Input.placeholder = "Ingresa otro número";
+  } else if (selectedValue === 'vacio') {
+      basicaButtons.style.display = 'none';
+      grupoSelector.style.display = 'none';
   } else {
+      basicaButtons.style.display = 'none';
       grupoSelector.style.display = 'block';
-      vacioOption.style.display = 'block'; 
+      num2Input.placeholder = "Resultado";
   }
 });
 
@@ -58,3 +47,4 @@ function funion_btn_bas4() {
   let resultado = num1 / num2;
   document.getElementById('resultado').innerHTML = "El resultado es: " + resultado;
 }
+
