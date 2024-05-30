@@ -47,4 +47,3 @@ function funion_btn_bas4() {
   let resultado = num1 / num2;
   document.getElementById('resultado').innerHTML = "El resultado es: " + resultado;
 }
-
